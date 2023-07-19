@@ -25,5 +25,5 @@ function getRandomHexColor() {
 
         clearInterval(intervalId);
         console.log('stop');
-    })
+    });
 
