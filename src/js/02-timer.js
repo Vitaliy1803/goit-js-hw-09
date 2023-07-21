@@ -9,6 +9,7 @@ const daysRef = document.querySelector('[data-days]');
 const hoursRef = document.querySelector('[data-hours]');
 const minutesRef = document.querySelector('[data-minutes]');
 const secondsRef = document.querySelector('[data-seconds]');
+const dataPickrEl = document.querySelector('#datetime-picker');
 
 let timerId = null;
 
@@ -33,6 +34,7 @@ const options = {
       console.log(currentDate);
       localStorage.setItem('selectedData', selectedDates[0]);
       const selectData = new Date(localStorage.getItem('selectedData'));
+      dataPickrEl.setAttribute('disabled', true);
 
       if (!selectData) {
         return;
@@ -97,7 +99,7 @@ const options = {
 
   const addLeadingZero = value => String(value).padStart(2, 0);
 
-  flatpickr('#datetime-picker', { ...options });
+  flatpickr(dataPickrEl, { ...options });
 
 
 
