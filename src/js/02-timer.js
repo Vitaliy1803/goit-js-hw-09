@@ -31,7 +31,7 @@ const options = {
       const showTimer = () => {
 
       const currentDate = new Date();
-      console.log(currentDate);
+      // console.log(currentDate);
       localStorage.setItem('selectedData', selectedDates[0]);
       const selectData = new Date(localStorage.getItem('selectedData'));
       dataPickrEl.setAttribute('disabled', true);

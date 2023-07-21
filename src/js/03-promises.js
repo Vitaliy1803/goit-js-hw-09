@@ -34,6 +34,10 @@ const onSubmitForm = (event) => {
   daleyStepInput = Number(step.value);
   amountInput = Number(amount.value);
 
+  if (firstDaleyInput < 0 || daleyStepInput < 0 || amountInput <= 0) {
+    Notify.failure(`❌ Please input correct values!`);
+  }
+
   for (let i = 1; i < amountInput; i++) {
     createPromise(i, firstDaleyInput)
     .then(({ position, delay }) => {
