@@ -36,6 +36,7 @@ const onSubmitForm = (event) => {
 
   if (firstDaleyInput < 0 || daleyStepInput < 0 || amountInput <= 0) {
     Notify.failure(`❌ Please input correct values!`);
+    return;
   }
 
   for (let i = 1; i < amountInput; i++) {
